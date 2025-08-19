@@ -97,7 +97,7 @@ constructor(
     override var blurAppliedListener: BlurAppliedListener? = null
 
     private fun isBlurAllowed(): Boolean {
-        return ActivityManager.isHighEndGfx() && !isDisableBlurSysPropSet()
+        return !ActivityManager.isLowRamDeviceStatic() && !isDisableBlurSysPropSet()
     }
 
     companion object {
