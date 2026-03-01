@@ -389,9 +389,6 @@ public final class PinnerService extends SystemService {
                 com.android.internal.R.array.config_defaultPinnerServiceFiles);
 
         String[] extraFiles = new String[] {
-            "/apex/com.android.art/javalib/okhttp.jar",
-            "/apex/com.android.art/javalib/bouncycastle.jar",
-            "/apex/com.android.media/javalib/updatable-media.jar",
             "/apex/com.android.art/javalib/core-oj.jar",
             "/apex/com.android.art/javalib/core-libart.jar",
             "/system_ext/priv-app/SystemUI/SystemUI.apk", //google pixel devices pins SystemUIGoogle
@@ -411,18 +408,6 @@ public final class PinnerService extends SystemService {
             "/system/lib64/libandroidfw.so",
             "/system/lib64/libandroid.so",
             "/system/lib64/libandroid_servers.so",
-            "/system/lib/libRS.so",
-            "/system/lib/libRS_internal.so",
-            "/system/lib/libbcinfo.so",
-            "/system/lib/libRSDriver.so",
-            "/system/lib/libRSCpuRef.so",
-            "/system/lib/libblas.so",
-            "/system/lib64/libRS.so",
-            "/system/lib64/libRS_internal.so",
-            "/system/lib64/libbcinfo.so",
-            "/system/lib64/libRSDriver.so",
-            "/system/lib64/libRSCpuRef.so",
-            "/system/lib64/libblas.so",
             "/system/lib/libbinder.so",
             "/system/lib/libbinder_ndk.so",
             "/system/lib64/libbinder.so",
