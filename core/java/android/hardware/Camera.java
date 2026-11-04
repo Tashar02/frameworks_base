@@ -67,8 +67,8 @@ import com.android.internal.app.IAppOpsService;
 
 import java.io.IOException;
 import java.lang.ref.WeakReference;
-import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.ArrayList;
 import java.util.LinkedHashMap;
 import java.util.List;
 import java.util.Objects;
@@ -300,17 +300,17 @@ public class Camera {
             return true;
         List<String> packageList = new ArrayList<>(Arrays.asList(
                 SystemProperties.get("vendor.camera.aux.packagelist", packageName).split(",")));
-        List<String> packageExcludelist = new ArrayList<>(Arrays.asList(
-                SystemProperties.get("vendor.camera.aux.packageexcludelist", "").split(",")));
+        List<String> packageBlacklist = new ArrayList<>(Arrays.asList(
+                SystemProperties.get("vendor.camera.aux.packageblacklist", "").split(",")));
 
         // Append packages from resources
         Resources res = ActivityThread.currentApplication().getResources();
         packageList.addAll(Arrays.asList(res.getStringArray(
                 com.android.internal.R.array.config_cameraAuxPackageAllowList)));
-        packageExcludelist.addAll(Arrays.asList(res.getStringArray(
+        packageBlacklist.addAll(Arrays.asList(res.getStringArray(
                 com.android.internal.R.array.config_cameraAuxPackageBlackList)));
 
-        return (packageList.isEmpty() || packageList.contains(packageName)) && !packageExcludelist.contains(packageName);
+        return (packageList.isEmpty() || packageList.contains(packageName)) && !packageBlacklist.contains(packageName);
     }
 
     /**
